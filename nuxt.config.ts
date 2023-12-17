@@ -17,16 +17,16 @@ export default defineNuxtConfig({
       public: {
         motion: {
           directives: {
-            'pop-bottom': {
+            'enter-left': {
               initial: {
                 scale: 0,
                 opacity: 0,
-                y: 100,
+                x: -100,
               },
-              visible: {
+              enter: {
                 scale: 1,
                 opacity: 1,
-                y: 0,
+                x: 0,
               }
             }
           }

@@ -5,15 +5,13 @@
              v-model="word" placeholder="search your word here..."
              class="outline-none p-2 border border-teal-400 rounded text-teal-800
               hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100" 
-             v-motion :initial= "{ scale: 0,  opacity: 0,  x: -100 }"
-              :enter= "{ scale: 1, opacity: 1, x: 0 }">
+             v-motion-slide-visible-left>
             <span 
             class="material-symbols-outlined items-center
              w-8 flex items-center justify-center
              border border-teal-400 rounded text-teal-800
              hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100"
-            v-motion :initial= "{ scale: 0,  opacity: 0,  x: -100 }"
-              :enter= "{ scale: 1, opacity: 1, x: 0 }"
+            v-motion-slide-visible-right
             @click="search(word)">search</span>
         </div>
 
@@ -32,9 +30,7 @@
                     <div v-for="(d,index) in meaning.definitions"
                      class="border-x-2 border-teal-700 px-2 m-2"
                      :class="index>3? readMoreClass:''"
-                      :key="index" 
-                           v-motion :initial= "{ scale: 0,  opacity: 0,  x: -100 }"
-              :enter= "{ scale: 1, opacity: 1, x: 0 }" >
+                      :key="index" >
                        <p>
                          <span class="font-bold text-teal-300">{{(index+1)}}.</span> {{d.definition }} </p>
                        

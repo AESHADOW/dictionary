@@ -4,14 +4,12 @@
             <input type="text" id="search" @keyup.enter="search(word)"
              v-model="word" placeholder="search your word here..."
              class="outline-none p-2 border border-teal-400 rounded text-teal-800
-              hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100" 
-             v-motion-slide-visible-left>
+              hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100" >
             <span 
             class="material-symbols-outlined items-center
              w-8 flex items-center justify-center
              border border-teal-400 rounded text-teal-800
              hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100"
-            v-motion-slide-visible-right
             @click="search(word)">search</span>
         </div>
 

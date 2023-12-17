@@ -1,3 +1,4 @@
+
 <template>
         <div class="flex gap-2 h-10 justify-center ">
             <input type="text" id="search" @keyup.enter="search(word)"
@@ -16,9 +17,9 @@
 
 
 
-        <div :class="wordClass" class="my-4 mx-24 min-w-full" v-motion-pop-visible>
+        <div :class="wordClass" class="my-4 max-w-full" v-motion-pop-visible>
             <div v-for="(data,index) in wordData" :key="index+data.word"
-             class="shadow-lg p-2 text-slate-500 bg-slate-300 rounded my-4 min-w-full"
+             class="shadow-lg p-2 text-slate-500 bg-slate-300 rounded my-4 max-w-fit"
              :class="data.meanings.length>1?'grid grid-cols-1 md:grid-cols-2':''"
               v-motion-slide-visible-right>
                 <h1 class="text-sky-700 font-bold"> {{ data.word }}</h1>
@@ -76,5 +77,10 @@ const readMore = () => {
 
 </script>
 
-<style scoped>
+<style>
+        *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box
+        }
 </style>

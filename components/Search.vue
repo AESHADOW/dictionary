@@ -44,6 +44,8 @@
 </template>
 
 <script setup lang="ts">
+import {ref,computed} from 'vue'
+
 const word = ref<string>('')
 const wordData = ref()
 const toggle = ref(false)

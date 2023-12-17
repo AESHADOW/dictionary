@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref,computed} from 'vue'
+import {ref,computed,onMounted} from 'vue'
 
 const word = ref<string>('')
 
@@ -70,7 +70,10 @@ const search = async(word:string) => {
     toggle.value = false
     return value
 }
-const wordData = computed(search(word))
+
+onMounted(()=>{
+    const wordData = computed(search(word))    
+})
 
 const readMore = () => {
     toggle.value = !toggle.value

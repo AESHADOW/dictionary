@@ -19,7 +19,7 @@
         <div :class="wordClass" class="my-4 mx-24" v-motion-pop-visible>
             <div v-for="(data,index) in wordData" :key="index+data.word"
              class="shadow-lg p-2 text-slate-500 bg-slate-300 rounded my-4"
-             :class="data.meanings.length>1?'grid md:grid-cols-2':''"
+             :class="data.meanings.length>1?'grid grid-cols-1 md:grid-cols-2':''"
               v-motion-slide-visible-right>
                 <h1 class="text-sky-700 font-bold"> {{ data.word }}</h1>
                 <p class="text-fuchsia-400"> {{ data.phonetics[0].text }}</p>
@@ -52,7 +52,7 @@ const toggle = ref<boolean>(false)
 
 const wordClass = computed(()=>{
     if(wordData.value){
-        if(wordData.length>1) return 'grid gap-2 md:grid-cols-2'
+        if(wordData.length>1) return 'grid grid-cols-1 gap-2 md:grid-cols-2'
     }
     else return ''
 })

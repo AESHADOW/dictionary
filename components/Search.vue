@@ -5,13 +5,13 @@
              v-model="word" placeholder="search your word here..."
              class="outline-none p-2 border border-teal-400 rounded text-teal-800
               hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100" 
-             v-motion-roll-visible-top>
+             v-motion-roll-visible-once-left>
             <span 
             class="material-symbols-outlined items-center
              w-8 flex items-center justify-center
              border border-teal-400 rounded text-teal-800
              hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100"
-            v-motion-roll-visible-right
+            v-motion-roll-visible-once-right
             @click="search(word)">search</span>
         </div>
 
@@ -21,7 +21,7 @@
             <div v-for="(data,index) in wordData" :key="index+data.word"
              class="shadow-lg p-2 text-slate-500 bg-slate-300 rounded my-4"
              :class="data.meanings.length>1?'grid grid-cols-1 md:grid-cols-2':''"
-              v-motion-slide-visible-right>
+              v-motion-slide-visible-once-right>
                 <h1 class="text-sky-700 font-bold"> {{ data.word }}</h1>
                 <p class="text-fuchsia-400"> {{ data.phonetics[0].text }}</p>
 
@@ -30,7 +30,7 @@
                     <div v-for="(d,index) in meaning.definitions"
                      class="border-x-2 border-teal-700 px-2 m-2"
                      :class="index>3? readMoreClass:''"
-                      :key="index" v-motion-slide-visible-right>
+                      :key="index" v-motion-slide-visible-once-right>
                        <p>
                          <span class="font-bold text-teal-300">{{(index+1)}}.</span> {{d.definition }} </p>
                        <p v-if="d.antonyms.length>0">antonyms: {{ d.antonyms}} </p>

@@ -48,7 +48,7 @@
 import {ref,computed} from 'vue'
 
 const word = ref<string>('')
-const wordData = ref()
+const wordData = computed(search(word))
 const toggle = ref<boolean>(false)
 
 const wordClass = computed(()=>{
@@ -67,8 +67,8 @@ return 'https://api.dictionaryapi.dev/api/v2/entries/en/'+word.value
 
 const search = async(word:string) => {
     const {data:{_rawValue:value}} = await useFetch(url.value , {key: word.value})
-    wordData.value = value 
     toggle.value = false
+    return value
 }
 
 const readMore = () => {

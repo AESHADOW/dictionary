@@ -17,9 +17,9 @@
 
 
 
-        <div :class="wordClass" class="my-4 max-w-full" v-motion-pop-visible>
+        <div :class="wordClass" class="my-4" v-motion-pop-visible>
             <div v-for="(data,index) in wordData" :key="index+data.word"
-             class="shadow-lg p-2 text-slate-500 bg-slate-300 rounded my-4 max-w-fit"
+             class="shadow-lg p-2 text-slate-500 bg-slate-300 rounded my-4"
              :class="data.meanings.length>1?'grid grid-cols-1 md:grid-cols-2':''"
               v-motion-slide-visible-right>
                 <h1 class="text-sky-700 font-bold"> {{ data.word }}</h1>

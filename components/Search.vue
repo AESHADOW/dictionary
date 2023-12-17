@@ -1,7 +1,7 @@
 
 <template>
         <div class="flex gap-2 h-10 relative justify-center ">
-            <input type="text" id="search" @click.enter="search(word)"
+            <input type="text" id="search" @keyup="search(word)"
              v-model="word" placeholder="search your word here..."
              class="outline-none relative w-80 p-2 border border-teal-400 rounded text-teal-800
               hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100" 
@@ -66,7 +66,7 @@ return 'https://api.dictionaryapi.dev/api/v2/entries/en/'+word.value
 })
 
 const search = async(word:string) => {
-    const {data:{_rawValue:value}} = await useFetch(url.value)
+    const {data:{_rawValue:value}} = await useFetch(url.value , {key: word.value})
     wordData.value = value 
     toggle.value = false
 }

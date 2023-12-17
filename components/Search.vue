@@ -1,6 +1,6 @@
 
 <template>
-        <div class="flex gap-2 h-10 w-80 relative justify-center ">
+        <div class="flex gap-2 h-10 relative justify-center ">
             <input type="text" id="search" @keyup.enter="search(word)"
              v-model="word" placeholder="search your word here..."
              class="outline-none p-2 border border-teal-400 rounded text-teal-800

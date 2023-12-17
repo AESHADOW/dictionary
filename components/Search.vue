@@ -1,9 +1,9 @@
 
 <template>
-        <div class="flex gap-2 h-10 justify-center ">
+        <div class="flex gap-2 h-10 w-1/2 justify-center ">
             <input type="text" id="search" @keyup="search(word)"
              v-model="word" placeholder="search your word here..."
-             class="outline-none p-2 border border-teal-400 rounded text-teal-800
+             class="outline-none fixed p-2 border border-teal-400 rounded text-teal-800
               hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100" 
              v-motion-roll-visible-top>
             <span 

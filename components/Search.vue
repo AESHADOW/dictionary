@@ -1,6 +1,6 @@
 <template>
         <div class="flex gap-2 h-10 justify-center ">
-            <input type="text" id="search" @keyup="search(word)"
+            <input type="text" id="search" @keyup.enter="search(word)"
              v-model="word" placeholder="search your word here..."
              class="outline-none p-2 border border-teal-400 rounded text-teal-800
               hover:border-teal-700 hover:bg-teal-300 hover:text-teal-100" 
@@ -48,7 +48,7 @@ import {ref,computed} from 'vue'
 
 const word = ref<string>('')
 const wordData = ref()
-const toggle = ref(false)
+const toggle = ref<boolean>(false)
 
 const wordClass = computed(()=>{
     if(wordData.value){

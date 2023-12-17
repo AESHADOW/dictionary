@@ -48,7 +48,7 @@
 import {ref,computed} from 'vue'
 
 const word = ref<string>('')
-const wordData = computed(search(word))
+
 const toggle = ref<boolean>(false)
 
 const wordClass = computed(()=>{
@@ -70,6 +70,7 @@ const search = async(word:string) => {
     toggle.value = false
     return value
 }
+const wordData = computed(search(word))
 
 const readMore = () => {
     toggle.value = !toggle.value
